@@ -17,7 +17,10 @@ const ProductsList = (props: Props) => {
                 }}
             >
                 <div>
-                    <Button className="button">
+                    <Button
+                        className="button"
+                        /* onClick={item.category === 'Breakfast'} */
+                    >
                         <div className="img">
                             <img src="/images/iconBreakfast.svg" alt="" />
                         </div>
@@ -45,8 +48,9 @@ const ProductsList = (props: Props) => {
             </Typography>
 
             <Grid container spacing={4}>
-                {productsArray.map(
-                    ({ id, title, description, type, price, image }) => (
+                {productsArray
+                    .filter((item) => item.category)
+                    .map(({ id, title, description, type, price, image }) => (
                         <Grid item xs={12} sm={4} key={id}>
                             <ProductListItem
                                 id={id}
@@ -57,8 +61,7 @@ const ProductsList = (props: Props) => {
                                 image={image}
                             />
                         </Grid>
-                    )
-                )}
+                    ))}
             </Grid>
         </>
     )

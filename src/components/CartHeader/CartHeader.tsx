@@ -1,9 +1,9 @@
 import { Button } from '@mui/material'
 import './CartHeader.scss'
-import { useAppSelector } from 'redux/hooks'
+/* import { useAppSelector } from 'redux/hooks' */
 
 const CartHeader = () => {
-    const productsInCart = useAppSelector((state) => state.productsInCart)
+    /* const productsInCart = useAppSelector((state) => state.productsInCart) */
     return (
         <div>
             <div>
